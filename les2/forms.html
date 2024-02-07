@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="form.php" method="post">
+        <fieldset>
+            <legend>Form example</legend>
+            <p>
+                <!-- <label for="first">Text input</label>
+                <input type="text" name="testField" id="first"> -->
+                <!-- <input type="radio" name="browser" value="chrome"> Google
+                <input type="radio" name="browser" value="opera"> Opera
+                <input type="radio" name="browser" value="firefox"> Firefox -->
+                <!-- <input type="checkbox" name="os[]" value="windows"> Windows
+                <input type="checkbox" name="os[]" value="linux"> Linux
+                <input type="checkbox" name="os[]" value="macos"> macOS -->
+                <!-- <textarea cols="30" rows="5" maxlength="5"
+                    name="testareaContent"></textarea> -->
+                    <!-- <select name="year" multiple size="5">
+                        <option value="1">1981</option>
+                        <option value="2">1982</option>
+                        <option value="3">1983</option>
+                        <option value="4">1984</option>
+                        <option value="5">1985</option>
+                        <option value="6">1986</option>
+                        <option value="7">1987</option>
+                        <option value="8">1988</option>
+                    </select> -->
+                    <!-- <label for="chooseDate">Choose date</label>
+                    <input type="date" name="mydate" id="chooseDate"> -->
+                    <input required type="email" name="useremail">
+            </p>
+            <br>
+            <button>Enter</button>
+        </fieldset>
+    </form>
+
+    <?php 
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            if(isset($_POST["os"])) {
+                echo $_POST["os"];
+            }
+        } else {
+            echo "Browser not selected.";
+        }
+    ?>
+</body>
+</html>
